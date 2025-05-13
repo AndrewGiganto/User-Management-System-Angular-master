@@ -200,5 +200,7 @@ docker run -p 4000:4000 user-management-backend
 ---
 
 <div align="center">
-  Made with ❤️ by Edem Froillan Kim B.
+  Andrew Mathew Giganto
+  Nicole Ablegas
+  Jospeh Earl Estimo
 </div>
