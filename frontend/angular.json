@@ -3,65 +3,105 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "angular-10-17-updated-boilerplate": {
-            "projectType": "application",
-            "schematics": {},
-            "root": "",
-            "sourceRoot": "src",
-            "prefix": "app",
-            "architect": {
-                "build": {
-                    "builder": "@angular-devkit/build-angular:browser",
-                    "options": {
-                        "outputPath": "dist/angular-10-17-updated-boilerplate",
-                        "index": "src/index.html",
-                        "main": "src/main.ts",
-                        "polyfills": "src/polyfills.ts",
-                        "tsConfig": "tsconfig.app.json",
-                        "assets": [
-                            "src/assets",
-                            "src/favicon.ico"
-                        ],
-                        "styles": [
-                            "src/styles.less"
-                        ],
-                        "scripts": []
-                    },
-                    "configurations": {
-                        "production": {
-                            "fileReplacements": [
-                                {
-                                    "replace": "src/environments/environment.ts",
-                                    "with": "src/environments/environment.prod.ts"
-                                }
-                            ],
-                            "optimization": true,
-                            "outputHashing": "all",
-                            "sourceMap": false,
-                            "namedChunks": false,
-                            "aot": true,
-                            "extractLicenses": true,
-                            "vendorChunk": false,
-                            "buildOptimizer": true
-                        }
-                    }
-                },
-                "serve": {
-                    "builder": "@angular-devkit/build-angular:dev-server",
-                    "options": {
-                        "browserTarget": "angular-10-17-updated-boilerplate:build",
-                        "proxyConfig": "proxy.conf.json"
-                    },
-                    "configurations": {
-                        "production": {
-                            "browserTarget": "angular-10-17-updated-boilerplate:build:production"
-                        }
-                    }
-                }
+      "user-management-system": { 
+        "projectType": "application",
+        "schematics": {
+          "@schematics/angular:component": {
+            "style": "less" 
+          }
+        },
+        "root": "",
+        "sourceRoot": "src",
+        "prefix": "app",
+        "architect": {
+          "build": {
+            "builder": "@angular-devkit/build-angular:browser",
+            "options": {
+              "outputPath": "dist/user-management-system",
+              "index": "src/index.html",  
+              "main": "src/main.ts",
+              "polyfills": "src/polyfills.ts", 
+              "tsConfig": "tsconfig.json",
+              "styles": ["src/styles.less"], 
+              "scripts": []
+            },
+            "configurations": {
+              "production": {
+                "fileReplacements": [
+                  {
+                    "replace": "src/environments/environment.ts",
+                    "with": "src/environments/environment.prod.ts"
+                  }
+                ],
+                "optimization": true,
+                "outputHashing": "all",
+                "sourceMap": false,
+                "namedChunks": false,
+                "extractLicenses": true,
+                "vendorChunk": false,
+                "buildOptimizer": true,
+                "budgets": [
+                  {
+                    "type": "initial",
+                    "maximumWarning": "500kb",
+                    "maximumError": "1mb"
+                  }
+                ]
+              },
+              "development": {
+                  "fileReplacements": [],
+                  "optimization": false,
+                  "sourceMap": true,
+                  "namedChunks": true,
+                  "extractLicenses": false,
+                  "vendorChunk": true,
+                  "buildOptimizer": false
+              }
             }
+          },
+          "serve": {
+            "builder": "@angular-devkit/build-angular:dev-server",
+            "options": {
+              "buildTarget": "user-management-system:build",
+              "poll": 1000
+            },
+            "configurations": {
+              "production": {
+                "buildTarget": "user-management-system:build:production"
+              },
+              "development": {
+                  "buildTarget": "user-management-system:build",
+                  "poll": 1000
+              }
+            }
+          },
+          "test": {
+            "builder": "@angular-devkit/build-angular:karma",
+            "options": {
+              "main": "src/test.ts",
+              "polyfills": "src/polyfills.ts",
+              "tsConfig": "tsconfig.spec.json",
+              "karmaConfig": "karma.conf.js",
+              "styles": ["src/styles.less"],
+              "scripts": []
+            }
+          },
+          "lint": {
+            "builder": "@angular-devkit/build-angular:tslint",
+            "options": {
+              "tsConfig": [
+                "tsconfig.json",
+                "tsconfig.spec.json"
+              ],
+              "exclude": [
+                "**/node_modules/**"
+              ]
+            }
+          }
         }
+      }
     },
     "cli": {
-        "analytics": false
+      "analytics": false
     }
-}
+  }

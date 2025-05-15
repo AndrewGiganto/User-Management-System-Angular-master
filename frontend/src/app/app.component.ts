@@ -1,23 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { AccountService } from './_services';
+import { Component } from '@angular/core';
+import { AccountService } from './_services/account.service';
 import { Account, Role } from './_models';
 
 @Component({
   selector: 'app',
-  templateUrl: 'app.component.html',
-  styleUrls: ['app.component.css']
+  templateUrl: 'app.component.html'
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   Role = Role;
-  account: Account | null;
+  account: Account;
 
   constructor(private accountService: AccountService) {
     this.accountService.account.subscribe(x => this.account = x);
-  }
-
-  ngOnInit() {
-    // Verify authentication on app startup/refresh
-    this.accountService.verifyAuth();
   }
 
   logout() {
