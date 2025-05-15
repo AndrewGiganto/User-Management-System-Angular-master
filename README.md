@@ -167,35 +167,12 @@ API documentation is available at `/api-docs` when the backend server is running
    - Start Command: `cd backend && npm start`
    - Add environment variables
 
-### Docker Deployment
-```bash
-# Build image
-docker build -t user-management-backend ./backend
-
-# Run container
-docker run -p 4000:4000 user-management-backend
-```
-
 ## 🤝 Contributing
 1. Fork the repository
 2. Create your feature branch
 3. Commit your changes
 4. Push to the branch
 5. Create a Pull Request
-
-## 👨‍💻 Developer
-
-<div align="center">
- <img src="https://avatars.githubusercontent.com/u/Froillan123" width="100" style="border-radius: 50%"/>
-
-  
-  **Edem Froillan Kim B.**
-  
-  Full Stack Developer • Class of 2025
-  
-  [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Froillan123)
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/yourusername)
-</div>
 
 ---
 
