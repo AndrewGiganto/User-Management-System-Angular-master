@@ -1,4 +1,4 @@
-node_modules
+/node_modules
 # Compiled source
 # Logs
 npm-debug.log*
@@ -47,3 +47,6 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+
+/.angular

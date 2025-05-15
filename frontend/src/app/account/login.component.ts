@@ -3,9 +3,11 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
-import { AccountService, AlertService } from '../../app/_services';
+import { AccountService, AlertService } from '@app/_services';
 
-@Component({ templateUrl: 'login.component.html' })
+@Component({
+  templateUrl: 'login.component.html'
+})
 export class LoginComponent implements OnInit {
   form: UntypedFormGroup;
   loading = false;
@@ -17,7 +19,7 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private accountService: AccountService,
     private alertService: AlertService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -27,24 +29,21 @@ export class LoginComponent implements OnInit {
   }
 
   // convenience getter for easy access to form fields
-  get f() {
-    return this.form.controls;
-  }
+  get f() { return this.form.controls; }
 
   onSubmit() {
     this.submitted = true;
-
+  
     // reset alerts on submit
     this.alertService.clear();
-
+  
     // stop here if form is invalid
     if (this.form.invalid) {
       return;
     }
-
+  
     this.loading = true;
-    this.accountService
-      .login(this.f.email.value, this.f.password.value)
+    this.accountService.login(this.f.email.value, this.f.password.value)
       .pipe(first())
       .subscribe({
         next: () => {
@@ -54,6 +53,7 @@ export class LoginComponent implements OnInit {
         },
         error: error => {
           this.alertService.error(error);
+          console.log('login failed', error);
           this.loading = false;
         }
       });
