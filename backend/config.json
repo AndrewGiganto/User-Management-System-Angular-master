@@ -5,11 +5,11 @@
     },
     "secret": "secretmakabawpalangka",
     "smtpOptions": {
-        "host": "smtp.ethereal.email",
+        "host": "smtp.gmail.com",
         "port": 587,
         "auth": {
-            "user": "elwin.torphy@ethereal.email",
-            "pass": "dhpbfAJcyehW9kwwz7"
+            "user": "huntersungjinwoo321@gmail.com",
+            "pass": "evjf ytho yuie bzfe"
         }
     }
 }
