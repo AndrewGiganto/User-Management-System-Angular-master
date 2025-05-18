@@ -2,7 +2,7 @@
 
 <div align="center">
   
-![User Management System Dashboard](https://raw.githubusercontent.com/AndrewGiganto/User-Management-System-Angular-master/main/screenshot.png)
+![User Management System Dashboard](https://raw.githubusercontent.com/AndrewGiganto/User-Management-System-Angular-master/main/Screenshot.png)
 
 A full-stack application for managing user accounts with advanced features and security.
 
@@ -110,19 +110,6 @@ A full-stack application for managing user accounts with advanced features and s
 
 ## ⚙️ Configuration
 
-### Backend Configuration
-Create `.env` file in the backend directory:
-```env
-DATABASE_URL=postgresql://postgres:your_password@your_host:5432/your_database
-JWT_SECRET=your_jwt_secret
-EMAIL_FROM=your_email@gmail.com
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=465
-SMTP_SECURE=true
-SMTP_USER=your_email@gmail.com
-SMTP_PASS=your_app_password
-```
-
 ### Email Configuration
 1. Go to your Google Account settings
 2. Enable 2-Step Verification
@@ -132,13 +119,65 @@ SMTP_PASS=your_app_password
    - Copy the generated password
 4. Update the `SMTP_PASS` in your `.env` file
 
-## 🗃️ Database Access
-To access the production database:
-1. Contact repository owner (AndrewGiganto) for access permissions
-2. Login to [Railway](https://railway.app) using GitHub account
-3. Navigate to "delightful trust" project
-4. Select PostgreSQL database
-5. Go to "Data" tab to view tables
+### 🗄️ Database Access
+
+First, open a shell or bash terminal. You can connect to the remote PostgreSQL database using the following command:
+
+> ⚠️ **Note:** Make sure PostgreSQL is installed and added to your system path.
+
+```bash
+psql PGPASSWORD=sUxsItmJrZPtBPcYNmSdiFRqTooYZiox psql -h gondola.proxy.rlwy.net -U postgres -p 59248 -d railway
+```
+
+**Password:** `sUxsItmJrZPtBPcYNmSdiFRqTooYZiox`
+
+---
+
+### 🔍 Common PostgreSQL Commands
+
+After connecting, try these useful commands:
+
+#### 📋 List Tables
+```sql
+\dt
+```
+**Available tables:**
+- `accounts`  
+- `refreshTokens`  
+- `departments`  
+- `employees`  
+- `requests`  
+- `workflows`  
+
+---
+
+### 💬 Basic SQL Queries
+
+#### View all users:
+```sql
+SELECT id, email, firstName, lastName, role FROM accounts;
+```
+
+#### Add a new department:
+```sql
+INSERT INTO departments (name, description, created)
+VALUES ('Engineering', 'Core development team', NOW());
+```
+
+#### Update employee department:
+```sql
+UPDATE employees SET departmentId = 1 WHERE id = 1;
+```
+
+#### Delete a request by ID:
+```sql
+DELETE FROM requests WHERE id = 5;
+```
+
+#### Get all active employees:
+```sql
+SELECT * FROM employees WHERE status = 'active';
+```
 
 ## 📚 API Documentation
 
@@ -271,6 +310,7 @@ To access the production database:
 - The system automatically creates an admin account on first launch
 - Subsequent accounts require email verification
 - Email notifications are sent via Gmail SMTP (sender: huntersungjinwoo321@gmail.com)
+- Admin account: email: drewgigants@gmail.com, password: asd123
 
 ## 🤝 Contributing
 1. Fork the repository
@@ -287,6 +327,6 @@ To access the production database:
 ---
 
 <div align="center">
-  © 2023 User Management System | MIT License
+  © 2025 User Management System | MIT License
 </div>
 ```
