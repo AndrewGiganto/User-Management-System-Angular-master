@@ -6,6 +6,36 @@
 
 A full-stack application for managing user accounts with advanced features and security.
 
+Database Connection URLs:
+(Andrew Mathew Giganto)
+```
+psql PGPASSWORD=sUxsItmJrZPtBPcYNmSdiFRqTooYZiox psql -h gondola.proxy.rlwy.net -U postgres -p 59248 -d railway
+```
+
+(Joseph Earl Estimo)
+```
+psql PGPASSWORD=AyGqmIqmPYvQXtcsarEAfoVMxoBHckRd psql -h hopper.proxy.rlwy.net -U postgres -p 53347 -d railway
+```
+
+(Nicole Abelgas)
+```
+psql PGPASSWORD=NktcSqwiNdElvHpviEUwGuIdUquCqHWK psql -h tramway.proxy.rlwy.net -U postgres -p 26229 -d railway
+```
+
+Website URLs:
+(Andrew Mathew Giganto)
+https://user-management-system-angular-master.vercel.app
+Admin: drewgigants@gmail.com   asd123
+
+(Joseph Earl Estimo)
+https://user-management-system-angular-master-estimo.vercel.app
+Admin: earlestimo@gmail.com   admin123
+
+(Nicole Abelgas)
+https://user-management-system-angular-master-abelgas.vercel.app
+Admin: coleabelgas32@gmail.com    admin123
+
+
 [![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://angular.io/)
 [![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
