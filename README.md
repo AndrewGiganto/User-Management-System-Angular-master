@@ -329,4 +329,3 @@ SELECT * FROM employees WHERE status = 'active';
 <div align="center">
   © 2025 User Management System | MIT License
 </div>
-```
