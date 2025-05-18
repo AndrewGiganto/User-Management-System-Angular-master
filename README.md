@@ -327,5 +327,5 @@ SELECT * FROM employees WHERE status = 'active';
 ---
 
 <div align="center">
-  © 2023 User Management System | MIT License
+  © 2025 User Management System | MIT License
 </div>
