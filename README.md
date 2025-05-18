@@ -310,6 +310,7 @@ SELECT * FROM employees WHERE status = 'active';
 - The system automatically creates an admin account on first launch
 - Subsequent accounts require email verification
 - Email notifications are sent via Gmail SMTP (sender: huntersungjinwoo321@gmail.com)
+- Admin account: email: drewgigants@gmail.com, password: asd123
 
 ## 🤝 Contributing
 1. Fork the repository
